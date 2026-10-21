@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="白忙一场：一台认真制造意义，又因为过于有用而把它作废的无用机器。">
+  <meta name="theme-color" content="#e9ece4">
+  <title>白忙一场 · The Useless Machine</title>
+  <link rel="icon" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="machine.css">
+</head>
+<body class="machine-page">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header id="site-header"></header>
+  <main id="main" class="machine-main">
+    <div class="machine-topline"><p>THE DEPARTMENT OF NOTHING</p><p>无用事务所 · 实验 001</p></div>
+    <div class="machine-layout">
+      <header class="machine-intro">
+        <p class="machine-kicker"><span aria-hidden="true"></span> THE USELESS MACHINE</p>
+        <h1>白忙<span>一场。</span></h1>
+        <p class="machine-thesis">这台机器唯一的工作，<br>是销毁自己的工作。</p>
+        <p class="machine-invitation">按下黄色按钮，制造一点意义。<br>它会认真处理你的请求。</p>
+        <div class="machine-spec"><span>投入：一点期待</span><span>产出：回到原点</span></div>
+      </header>
+      <section class="machine-exhibit" aria-label="意义制造机">
+        <div class="machine-stage" id="machine-stage" data-state="idle">
+          <svg class="machine-drawing" viewBox="0 0 760 530" role="presentation" aria-hidden="true">
+            <defs>
+              <clipPath id="paper-area"><rect x="255" y="8" width="250" height="249"/></clipPath>
+              <pattern id="speaker-holes" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.4" fill="#526451"/></pattern>
+              <linearGradient id="case-light" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c5ab"/><stop offset="1" stop-color="#9eaf90"/></linearGradient>
+            </defs>
+            <ellipse class="machine-shadow" cx="385" cy="469" rx="267" ry="22" fill="#cbd2c1"/>
+            <rect x="183" y="427" width="53" height="42" rx="10" fill="#4c5d49"/>
+            <rect x="534" y="427" width="53" height="42" rx="10" fill="#4c5d49"/>
+            <rect x="136" y="227" width="498" height="218" rx="33" fill="#829576" stroke="#697f5d" stroke-width="2"/>
+            <path d="M170 220 Q170 201 191 201 H579 Q600 201 600 220 V270 H170Z" fill="#91a480" stroke="#697f5d" stroke-width="2"/>
+            <rect x="245" y="244" width="270" height="20" rx="10" fill="#33472e"/>
+            <g clip-path="url(#paper-area)">
+              <g class="machine-ticket">
+                <path d="M277 42 H483 V238 L475 232 L467 238 L459 232 L451 238 L443 232 L435 238 L427 232 L419 238 L411 232 L403 238 L395 232 L387 238 L379 232 L371 238 L363 232 L355 238 L347 232 L339 238 L331 232 L323 238 L315 232 L307 238 L299 232 L291 238 L283 232 L277 238Z" fill="#fffdf4" stroke="#d4d2c4" stroke-width="1.5"/>
+                <text x="380" y="70" text-anchor="middle" class="ticket-small">OFFICIAL CERTIFICATE</text>
+                <path d="M297 83H463" stroke="#ccd0bf"/>
+                <text x="380" y="130" text-anchor="middle" class="ticket-title">意 义</text>
+                <text x="380" y="153" text-anchor="middle" class="ticket-small">已生成 · 看起来很有用</text>
+                <path d="M300 177H460M300 185H433M300 193H449" stroke="#d5d8ca" stroke-width="2"/>
+                <g class="machine-stamp" transform="translate(380 174)">
+                  <g transform="rotate(-12)"><rect x="-96" y="-25" width="192" height="57" rx="3" fill="#fff8e8" fill-opacity=".87" stroke="#ac432d" stroke-width="3"/><rect x="-90" y="-19" width="180" height="45" rx="1" fill="none" stroke="#ac432d"/><text y="3" text-anchor="middle" class="stamp-title">过于有用</text><text y="20" text-anchor="middle" class="stamp-small">VOID · 不符合本机宗旨</text></g>
+                </g>
+              </g>
+            </g>
+            <rect x="136" y="263" width="498" height="182" rx="28" fill="url(#case-light)" stroke="#697f5d" stroke-width="2"/>
+            <path d="M155 277H615" stroke="#d5ddca" stroke-width="2" stroke-linecap="round"/>
+            <rect x="177" y="303" width="303" height="92" rx="14" fill="#394b36"/>
+            <rect x="185" y="311" width="287" height="76" rx="9" fill="#263b29"/>
+            <circle class="status-lamp" cx="207" cy="335" r="4" fill="#bcce8a"/>
+            <text x="221" y="339" class="screen-label">MEANING GENERATOR</text>
+            <text id="machine-screen" x="207" y="368" class="screen-message">等待一点期待_</text>
+            <path class="screen-scan" d="M192 378H463" stroke="#b8ce83" stroke-opacity=".17"/>
+            <rect x="192" y="411" width="81" height="16" fill="url(#speaker-holes)"/>
+            <text x="297" y="424" class="case-label">NOTHING GUARANTEED.</text>
+            <text x="552" y="412" text-anchor="middle" class="button-label">制造一点意义</text>
+            <circle cx="159" cy="292" r="4" fill="#798c6c"/><path d="M156 292H162" stroke="#cdd7c2"/>
+            <circle cx="611" cy="292" r="4" fill="#798c6c"/><path d="M608 292H614" stroke="#cdd7c2"/>
+            <circle cx="159" cy="421" r="4" fill="#798c6c"/><path d="M156 421H162" stroke="#cdd7c2"/>
+            <circle cx="611" cy="421" r="4" fill="#798c6c"/><path d="M608 421H614" stroke="#cdd7c2"/>
+            <path d="M246 258H514" stroke="#b6c9a2" stroke-width="3" stroke-linecap="round"/>
+            <g class="stamp-arm"><rect x="488" y="108" width="15" height="128" rx="7" fill="#53684a"/><rect x="392" y="100" width="111" height="15" rx="7" fill="#697e5f"/><rect x="371" y="106" width="45" height="27" rx="6" fill="#a94e36"/><path d="M375 133H412" stroke="#873825" stroke-width="5" stroke-linecap="round"/></g>
+            <text x="385" y="511" text-anchor="middle" class="floor-label">DESIGNED TO GO ABSOLUTELY NOWHERE.</text>
+          </svg>
+          <button type="button" id="make-meaning" class="machine-button" aria-label="制造一点意义" aria-describedby="machine-status" aria-disabled="false"><span class="button-star" aria-hidden="true">✳</span><span class="button-word" aria-hidden="true">MAKE</span></button>
+        </div>
+        <div class="machine-caption"><span class="caption-light" aria-hidden="true"></span><p id="machine-status" role="status" aria-live="polite" aria-atomic="true">待机。按下按钮，看看会发生什么。</p></div>
+        <noscript><p class="machine-nojs">这台机器需要 JavaScript 才能白忙，请启用后再试。</p></noscript>
+      </section>
+    </div>
+    <footer class="machine-bottomline"><p>无需登录。无需目的。无需有用。</p><p>鼠标 / 触屏 / Tab + 空格</p></footer>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="nav.js" defer></script>
+  <script src="machine.js" defer></script>
+</body>
+</html>

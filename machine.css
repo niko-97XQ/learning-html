@@ -1,0 +1,80 @@
+/* A small physical exhibit; all drawing and movement stay on this page. */
+.machine-page { background:#e9ece4; color:#303c30; }
+.machine-page #site-header { background:#f5f6f0; }
+.machine-main { width:min(1280px,100% - 6rem); }
+.machine-topline,.machine-bottomline { display:flex; justify-content:space-between; gap:1rem; font-size:.65rem; letter-spacing:.08em; color:#63715e; }
+.machine-topline { padding:2rem 0 1.25rem; border-bottom:1px solid #cdd4c5; }
+.machine-topline p,.machine-bottomline p { margin:0; }
+.machine-topline p:first-child { font-family:Consolas,monospace; }
+.machine-layout { display:grid; grid-template-columns:.8fr 1.5fr; gap:1rem; align-items:center; min-height:580px; padding:2rem 0; }
+.machine-kicker { display:flex; align-items:center; gap:.65rem; font-family:Consolas,monospace; font-size:.65rem; letter-spacing:.1em; color:#65765c; }
+.machine-kicker span { height:6px; width:6px; border-radius:50%; background:#7d9368; }
+.machine-intro h1 { font-family:'STSong','SimSun',serif; font-size:clamp(3.7rem,6vw,6rem); font-weight:500; letter-spacing:-.06em; line-height:1.15; margin:1.7rem 0 1.5rem; }
+.machine-intro h1 span { display:block; color:#687d57; margin-left:.6em; }
+.machine-thesis { font-size:1.1rem; line-height:1.9; }
+.machine-invitation { font-size:.85rem; color:#697460; line-height:1.9; margin-top:1.3rem; }
+.machine-spec { display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; padding-top:1.4rem; margin-top:1.7rem; border-top:1px solid #cdd4c5; font-size:.65rem; color:#6b7663; max-width:280px; }
+.machine-stage { width:100%; position:relative; isolation:isolate; }
+.machine-drawing { display:block; width:100%; overflow:visible; }
+.machine-ticket { transform:translateY(230px); transition:transform 1.15s cubic-bezier(.26,.65,.3,1); }
+.machine-stamp { opacity:0; }
+.machine-stamp>g { transform-origin:0 0; }
+.stamp-arm { transform:translate(0,-26px) rotate(-45deg); transform-origin:495px 231px; opacity:0; transition:transform .35s,opacity .2s; }
+.machine-stage[data-state=printing] .machine-ticket,.machine-stage[data-state=judging] .machine-ticket { transform:translateY(0); }
+.machine-stage[data-state=judging] .stamp-arm { opacity:1; animation:stamp-hit .65s ease-in-out both; }
+.machine-stage[data-state=judging] .machine-stamp { animation:ink-stamp .65s step-end both; }
+.machine-stage[data-state=retracting] .machine-stamp { opacity:1; }
+.machine-stage[data-state=retracting] .machine-ticket { transform:translateY(230px); transition-duration:1.05s; transition-timing-function:cubic-bezier(.65,0,.78,.4); }
+.machine-stage[data-state=retracting] .machine-shadow { animation:grumble .14s linear 6; transform-origin:center; }
+.machine-stage:not([data-state=idle]) .status-lamp { animation:working-light .6s step-end infinite; }
+.machine-stage:not([data-state=idle]) .screen-scan { animation:scan 1s linear infinite; }
+.machine-stage[data-state=judging] .status-lamp { fill:#f1c06c; }
+.machine-button { position:absolute; left:66.45%; top:56.9%; width:12.4%; aspect-ratio:1; min-height:40px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0; border:3px solid #7e6737; border-radius:50%; background:#efc260; color:#504328; box-shadow:0 7px 0 #806a3a,0 10px 0 4px #859572; line-height:1; transition:transform .12s,box-shadow .12s,background .15s; -webkit-tap-highlight-color:transparent; }
+.machine-button:hover { background:#f7cf7a; color:#504328; }
+.machine-button:active,.machine-button[aria-disabled=true] { transform:translateY(5px); box-shadow:0 2px 0 #806a3a,0 5px 0 4px #859572; }
+.machine-button[aria-disabled=true] { cursor:wait; }
+.machine-button:focus-visible { outline:3px solid #3e5d38; outline-offset:9px; }
+.button-star { font-size:clamp(1rem,3.3vw,2.8rem); line-height:1; }
+.button-word { font-family:Consolas,monospace; font-size:clamp(.42rem,.65vw,.6rem); letter-spacing:.15em; margin-top:.2rem; }
+.ticket-small { font-size:9px; fill:#7b8270; font-family:Consolas,'Microsoft YaHei',sans-serif; letter-spacing:1px; }
+.ticket-title { font-size:34px; fill:#3f513a; font-family:'SimSun',serif; }
+.stamp-title { font-size:22px; fill:#a9432c; font-weight:700; font-family:'Microsoft YaHei',sans-serif; letter-spacing:4px; }
+.stamp-small { font-size:8px; fill:#a9432c; font-family:Consolas,'Microsoft YaHei',sans-serif; }
+.screen-label { font-family:Consolas,monospace; fill:#b9ca9b; font-size:10px; letter-spacing:1.2px; }
+.screen-message { font-family:Consolas,'Microsoft YaHei',sans-serif; fill:#cfdfb0; font-size:17px; letter-spacing:1px; }
+.case-label { font-family:Consolas,monospace; font-size:10px; fill:#465b3d; letter-spacing:.9px; }
+.button-label { font-family:'Microsoft YaHei',sans-serif; font-size:12px; fill:#415037; letter-spacing:2px; }
+.floor-label { font-family:Consolas,monospace; font-size:10px; fill:#78876d; letter-spacing:2px; }
+.machine-caption { display:flex; align-items:center; justify-content:center; gap:.6rem; min-height:3rem; padding:.5rem 1rem; color:#5d6c52; font-size:.8rem; text-align:center; }
+.machine-caption p { margin:0; }
+.caption-light { width:5px; height:5px; border-radius:50%; background:#7d9368; flex:none; }
+.machine-bottomline { padding:1.3rem 0 2rem; border-top:1px solid #cdd4c5; }
+.machine-nojs { color:#823e2b; text-align:center; font-size:.8rem; }
+.machine-page #site-footer { border-top:0; }
+@keyframes stamp-hit { 0% { opacity:0; transform:translateY(-26px) rotate(-45deg); } 30% { opacity:1; transform:translateY(-16px) rotate(0); } 58% { transform:translateY(54px) rotate(0); } 72% { opacity:1; transform:translateY(48px) rotate(0); } 100% { opacity:0; transform:translateY(-26px) rotate(-45deg); } }
+@keyframes ink-stamp { 0% { opacity:0; } 58%,100% { opacity:1; } }
+@keyframes working-light { 50% { opacity:.3; } }
+@keyframes scan { from { transform:translateY(-57px); } to { transform:translateY(0); } }
+@keyframes grumble { 50% { transform:translateX(2px); } }
+@media(max-width:900px) {
+  .machine-main { width:calc(100% - 3rem); }
+  .machine-layout { grid-template-columns:.8fr 1.4fr; min-height:540px; }
+  .machine-intro h1 { font-size:4rem; }.machine-thesis { font-size:.95rem; }.machine-invitation { font-size:.75rem; }.machine-caption { font-size:.7rem; }
+}
+@media(max-width:650px) {
+  .machine-main { width:calc(100% - 2.5rem); }
+  .machine-topline { padding:1.25rem 0 .85rem; font-size:.5rem; letter-spacing:.025em; }
+  .machine-layout { grid-template-columns:1fr; gap:0; padding:1.7rem 0 1.4rem; min-height:0; }
+  .machine-intro { position:relative; }.machine-kicker { font-size:.55rem; margin-bottom:1rem; }.machine-intro h1 { font-size:3.6rem; margin:.8rem 0 1rem; }.machine-intro h1 span { display:inline; margin:0; }
+  .machine-thesis { font-size:.92rem; margin-bottom:0; }.machine-thesis br { display:none; }.machine-invitation { margin:.7rem 0 0; font-size:.75rem; }.machine-invitation br { display:none; }
+  .machine-spec { display:none; }.machine-exhibit { margin-top:1.6rem; }.machine-caption { min-height:3.5rem; padding:0; font-size:.7rem; }
+  .machine-button { min-width:44px; min-height:44px; border-width:2px; box-shadow:0 4px 0 #806a3a,0 6px 0 2px #859572; }.machine-button[aria-disabled=true],.machine-button:active { transform:translateY(3px); box-shadow:0 1px 0 #806a3a,0 3px 0 2px #859572; }
+  .button-star { font-size:1.1rem; }.button-word { font-size:.34rem; margin-top:.1rem; }
+  .machine-bottomline { font-size:.53rem; letter-spacing:0; padding:1rem 0; flex-wrap:wrap; gap:.5rem; }
+}
+/* Keep the joke for people who prefer less motion: states still change, without travel. */
+@media(prefers-reduced-motion:reduce) {
+  .machine-stage *, .machine-button { animation:none !important; transition:none !important; }
+  .machine-stage[data-state=judging] .machine-stamp { opacity:1; }
+  .machine-stage[data-state=judging] .stamp-arm { opacity:0; }
+}
