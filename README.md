@@ -1,5 +1,13 @@
 # 许强 / Qiang Xu · 个人作品与研究
 
+## 2026-10-28 本地视觉改版
+
+当前编辑目录为桌面 `网站设计/my-site`。采用灰白、黑字和少量蓝色的简洁布局，包含首页的项目界面示意、滚动淡入，以及页尾自动关机的无用机器。原来的打印机实验仍可从首页进入。
+
+网站继续使用老师课件的 HTML/CSS/JavaScript 基础结构，没有引入框架。课件与实现的逐项对应见 [COURSE-NOTES.md](COURSE-NOTES.md)。本版本用于 Learning HTML 提交，源码保存在私有仓库。
+
+新增 `motion.js`（渐进式滚动动效）和 `nothing.js`（页尾机器交互）。在系统中开启“减少动态效果”后，动画会自动简化。页面交互支持鼠标、触屏与键盘。
+
 计算机科学本科生的个人网站，展示 AI 应用项目、具身空间记忆检索研究、Citi Bike 时空预测和学习经历。
 
 ## 本地运行
@@ -24,7 +32,7 @@
 
 ## GitHub 与后续
 
-仓库：https://github.com/niko-97XQ/webproject
+仓库：https://github.com/niko-97XQ/learning-html
 
 保留初始课堂版本的 Git 历史。代码上传不等于开启 GitHub Pages；尚未配置自动部署。启用静态托管后可补充每页 canonical 和 og:url。
 
@@ -34,3 +42,4 @@
 - [Your Project：课程要求](https://webtech.landrock.io/slides/project.html)
 
 最终网站要求包括至少四页、语义化结构、移动端适配、交互、持续 Git 历史和真实线上地址。引用练习沿用课程示例及其来源标注。
+
