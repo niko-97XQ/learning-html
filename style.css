@@ -173,3 +173,14 @@ main { width:min(1080px,calc(100% - 64px)); margin-inline:auto; }
 @media (max-width: 640px) {
   .quote-hero { padding: 44px 22px; border-radius: 22px; }
 }
+
+/* Project page: the "ideas on the shelf" list below the selected work. */
+.ideas-section { margin-top: 70px; }
+.idea-list { list-style: none; margin: 26px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.idea-list li { background: var(--soft); border-radius: 22px; padding: 26px 28px; }
+.idea-list h3 { font-size: 19px; margin: 0 0 8px; }
+.idea-list p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+@media (max-width: 640px) {
+  .ideas-section { margin-top: 45px; }
+  .idea-list { grid-template-columns: 1fr; }
+}
