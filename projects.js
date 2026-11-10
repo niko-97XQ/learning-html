@@ -1,4 +1,4 @@
-// 用按钮筛选项目，aria-pressed 告诉辅助技术当前选择。
+// Filter projects with buttons; aria-pressed tells assistive technology which filter is active.
 const bar = document.querySelector('.filter-bar');
 const cards = [...document.querySelectorAll('[data-category]')];
 if (bar) {
@@ -14,7 +14,7 @@ if (bar) {
         card.hidden = category !== 'all' && card.dataset.category !== category;
         if (!card.hidden) count += 1;
       });
-      document.getElementById('filter-status').textContent = `显示 ${count} 个项目`;
+      document.getElementById('filter-status').textContent = `Showing ${count} projects`;
     });
   });
 }

@@ -1,11 +1,11 @@
-// 首页开场只在当前浏览器标签首次进入时出现；?intro=1 可重看。
+// The home-page intro gate appears only on the first visit of this browser tab; add ?intro=1 to replay it.
 (() => {
   const gate = document.getElementById('entry-gate');
   if (!gate) return;
 
   const replay = new URLSearchParams(window.location.search).get('intro') === '1';
   let seen = false;
-  try { seen = window.sessionStorage.getItem('qiang-xu-entry-seen') === '1'; } catch (_) { /* 禁用存储时仍能进入 */ }
+  try { seen = window.sessionStorage.getItem('qiang-xu-entry-seen') === '1'; } catch (_) { /* Entering still works when storage is disabled */ }
   if (seen && !replay) {
     gate.remove();
     return;
@@ -23,7 +23,7 @@
   button.addEventListener('click', () => {
     if (leaving) return;
     leaving = true;
-    try { window.sessionStorage.setItem('qiang-xu-entry-seen', '1'); } catch (_) { /* 不依赖存储完成进入 */ }
+    try { window.sessionStorage.setItem('qiang-xu-entry-seen', '1'); } catch (_) { /* Entering does not depend on storage */ }
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduced) gate.classList.add('is-exiting');
     window.setTimeout(() => {

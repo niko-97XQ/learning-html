@@ -1,23 +1,21 @@
-# 课件结构与本项目
+# Course Slides vs. This Project
 
-基础代码参考 [Recap 2–4: Your site, by hand](https://webtech.landrock.io/slides/recap-2-4.html)，2026-10-28 核对。
+The base code follows [Recap 2–4: Your site, by hand](https://webtech.landrock.io/slides/recap-2-4.html), verified on 2026-10-28.
 
-| 课程示例 | 本项目对应 |
+| Course example | In this project |
 | --- | --- |
-| `<!DOCTYPE html>`、`lang`、`meta charset`、`meta viewport` | 每个完整 HTML 页面 |
-| `header`、`main`、`section`、`article`、`footer` | 页面和作品的语义结构 |
-| 每页链接 `style.css` | 全站共享排版、Flexbox、Grid、媒体查询 |
-| `nav.html` / `footer.html` 片段 | 只写一次导航与页脚，不重复整页结构 |
-| `function load(file, target)` → `fetch` → `.text()` → `innerHTML` | `nav.js`，额外加入请求失败处理和 `aria-current` |
-| `load('nav.html', 'site-header')`、`load('footer.html', 'site-footer')` | 原样保留两次调用 |
-| 通过 Live Server 访问 | 必须使用 HTTP；直接双击 HTML 无法加载共享片段 |
+| `<!DOCTYPE html>`, `lang`, `meta charset`, `meta viewport` | Every complete HTML page |
+| `header`, `main`, `section`, `article`, `footer` | Semantic structure for pages and project entries |
+| `style.css` linked from every page | Shared typography, Flexbox, Grid and media queries across the site |
+| `nav.html` / `footer.html` fragments | Navigation and footer written once, no repeated page scaffolding |
+| `function load(file, target)` → `fetch` → `.text()` → `innerHTML` | `nav.js`, extended with request-failure handling and `aria-current` |
+| `load('nav.html', 'site-header')`, `load('footer.html', 'site-footer')` | Both calls kept as-is |
+| Served through Live Server | HTTP is required; double-clicking the HTML cannot load the shared fragments |
 
-设计扩展没有引入 React、构建工具或动画库：
+The design extensions introduce no React, no build tooling and no animation libraries:
 
-- `style.css`：灰白底、系统字体、胶囊按钮、半透明导航；使用 CSS 画项目示意界面。
-- `motion.js`：IntersectionObserver + Web Animations API。内容默认可见，进入视口播放一次，不劫持滚动。
-- `nothing.js`：按钮 click → data-phase 状态 → CSS transition。过程为 idle → thinking → opening → reaching → returning → closing → idle。
-- 原来的 `machine.html/css/js` 保留，首页“另一个没用的发明”可以进入。
-- 所有动效尊重 `prefers-reduced-motion`；开关可用 Tab、空格和 Enter 操作。
-
-本次是本地预览改版，没有向 GitHub 推送。
+- `style.css`: off-white background, system fonts, capsule buttons, translucent navigation; project illustrations drawn in CSS.
+- `motion.js`: IntersectionObserver + Web Animations API. Content is visible by default, animates once when entering the viewport, and never hijacks scrolling.
+- `nothing.js`: button click → data-phase state → CSS transition. The cycle is idle → thinking → opening → reaching → returning → closing → idle.
+- The original `machine.html/css/js` is kept, reachable from "Another useless invention" on the home page.
+- All animations respect `prefers-reduced-motion`; the switches work with Tab, Space and Enter.

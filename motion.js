@@ -1,4 +1,4 @@
-// 渐进增强：内容默认可见，进入视口后只播放一次淡入，不劫持滚动。
+// Progressive enhancement: content is visible by default, fades in once when entering the viewport, and never hijacks scrolling.
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => {

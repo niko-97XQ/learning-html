@@ -1,4 +1,4 @@
-// 课件 Recap 2–4：同一个 load()，加载两个 HTML 片段（DRY）。
+// Course Recap 2–4: one load() fetches both HTML fragments (DRY).
 function load(file, target) {
   fetch(file)
     .then(response => {
@@ -8,7 +8,7 @@ function load(file, target) {
     .then(html => {
       const container = document.getElementById(target);
       container.innerHTML = html;
-      // 在课件基础上补充当前页标记，帮助键盘和屏幕阅读器用户。
+      // Beyond the course example: mark the current page to help keyboard and screen reader users.
       if (target === 'site-header') {
         const page = location.pathname.split('/').pop() || 'index.html';
         container.querySelectorAll('.links a').forEach(link => {
@@ -20,10 +20,10 @@ function load(file, target) {
       const container = document.getElementById(target);
       const note = document.createElement('p');
       note.className = 'load-note';
-      note.textContent = '导航暂时无法加载。请使用 Live Server 打开并刷新。';
+      note.textContent = 'Navigation could not be loaded. Please open the site with Live Server and refresh.';
       const home = document.createElement('a');
       home.href = 'index.html';
-      home.textContent = '返回首页';
+      home.textContent = 'Back to home';
       container.replaceChildren(note, home);
       console.error(error);
     });
