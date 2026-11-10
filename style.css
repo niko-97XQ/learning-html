@@ -184,3 +184,10 @@ main { width:min(1080px,calc(100% - 64px)); margin-inline:auto; }
   .ideas-section { margin-top: 45px; }
   .idea-list { grid-template-columns: 1fr; }
 }
+
+/* Home page: the hero banner at the top of the intro. */
+.hero { margin: 0 auto 46px; max-width: 1040px; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, .07); }
+.hero img { display: block; width: 100%; height: clamp(220px, 30vw, 420px); object-fit: cover; }
+@media (max-width: 640px) {
+  .hero { border-radius: 18px; margin-bottom: 32px; }
+}
